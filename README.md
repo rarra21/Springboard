@@ -45,4 +45,44 @@ Due to large size (~400MB+), only processed sample datasets are included in this
 
 ## Data Collection & Processing
 
-The script used to collect and process the data is:
+The script used to collect and process the data is: scripts/data_collection.py
+
+This script performs:
+- Loading raw PeMS data
+- Selecting relevant columns
+- Cleaning missing values
+- Feature engineering (hour, day of week)
+- Creating prediction targets (30 min and 60 min ahead)
+- Exporting sample datasets
+
+---
+
+## Model (Initial Baseline)
+
+A simple Linear Regression model was trained using:
+
+Features:
+- flow
+- occupancy
+- hour
+- dayofweek
+
+Target:
+- speed_30min_ahead
+
+### Performance:
+- MAE: 0.032
+- RMSE: 0.054
+
+---
+
+## Notes
+
+- Full dataset is large and not included in GitHub
+- Sample datasets are used for demonstration
+- Future work will include more advanced models and deployment
+
+---
+
+## Author
+Ravi Arora
