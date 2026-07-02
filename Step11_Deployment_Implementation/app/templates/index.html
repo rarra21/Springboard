@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PeMS Traffic Speed Predictor</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 760px; margin: 40px auto; line-height: 1.5; }
+    label { display: block; margin: 12px 0 4px; font-weight: 600; }
+    input { padding: 8px; width: 100%; box-sizing: border-box; }
+    button { margin-top: 18px; padding: 10px 18px; cursor: pointer; }
+    .card { background: #f7f7f7; padding: 18px; border-radius: 8px; margin-top: 20px; }
+    .error { color: #b00020; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>PeMS Traffic Speed Predictor</h1>
+  <p>This UI sends traffic sensor features to the deployed model and returns a 60-minute-ahead speed prediction.</p>
+
+  <form method="post" action="/ui-predict">
+    <label>Station ID</label>
+    <input name="station_id" value="1001">
+
+    <label>Flow</label>
+    <input name="flow" value="120">
+
+    <label>Occupancy</label>
+    <input name="occupancy" value="0.08">
+
+    <label>Current Speed</label>
+    <input name="speed" value="60">
+
+    <label>Hour</label>
+    <input name="hour" value="8">
+
+    <label>Day of Week</label>
+    <input name="dayofweek" value="2">
+
+    <button type="submit">Predict</button>
+  </form>
+
+  {% if prediction is not none %}
+  <div class="card">
+    <h2>Predicted speed 60 minutes ahead</h2>
+    <p><strong>{{ prediction }}</strong></p>
+  </div>
+  {% endif %}
+
+  {% if error %}
+  <div class="card error">Error: {{ error }}</div>
+  {% endif %}
+</body>
+</html>

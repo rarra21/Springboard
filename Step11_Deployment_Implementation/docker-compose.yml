@@ -1,0 +1,10 @@
+services:
+  pems-traffic-api:
+    build: .
+    container_name: pems-traffic-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./logs:/app/logs
+    environment:
+      - FLASK_ENV=production
