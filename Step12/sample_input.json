@@ -1,0 +1,8 @@
+{
+  "station_id": "1001",
+  "flow": 900,
+  "occupancy": 0.12,
+  "speed": 60.0,
+  "hour": 8,
+  "dayofweek": 1
+}

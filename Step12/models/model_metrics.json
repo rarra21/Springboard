@@ -1,0 +1,22 @@
+{
+  "target": "speed_60min_ahead",
+  "features": [
+    "station_id",
+    "flow",
+    "occupancy",
+    "speed",
+    "hour",
+    "dayofweek"
+  ],
+  "best_params": {
+    "model__C": 1.0,
+    "model__epsilon": 0.5,
+    "model__kernel": "rbf"
+  },
+  "mae_training_set": 4.023565285851816,
+  "rmse_training_set": 7.883319058599414,
+  "r2_training_set": -0.02650880730497862,
+  "training_time_seconds": 0.17975521087646484,
+  "row_count": 160,
+  "model_artifact": "traffic_speed_svr_pipeline.pkl"
+}
