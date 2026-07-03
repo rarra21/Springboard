@@ -182,6 +182,11 @@ Future work may include:
 - Automatic model retraining
 - Deep learning models such as LSTM, GRU, DCRNN, STGCN, and Graph WaveNet
 
+
+### Prediction Result
+
+![Prediction](screenshots/prediction_result.png)
+
 ---
 
 # Acknowledgements
